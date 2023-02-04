@@ -1,0 +1,1 @@
+Based on the following Microsoft example: [Increment component](https://learn.microsoft.com/en-us/power-apps/developer/component-framework/sample-controls/increment-control).
