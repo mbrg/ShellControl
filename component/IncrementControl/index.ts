@@ -1,16 +1,4 @@
-﻿/*
-	This file is part of the Microsoft PowerApps code samples. 
-	Copyright (C) Microsoft Corporation.  All rights reserved. 
-	This source code is intended only as a supplement to Microsoft Development Tools and/or  
-	on-line documentation.  See these other materials for detailed information regarding  
-	Microsoft code samples. 
-
-	THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER  
-	EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF  
-	MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR PURPOSE. 
- */
-
-import { IInputs, IOutputs } from "./generated/ManifestTypes";
+﻿import { IInputs, IOutputs } from "./generated/ManifestTypes";
 
 export class IncrementControl implements ComponentFramework.StandardControl<IInputs, IOutputs> {
 	// PCF framework delegate which will be assigned to this object which would be called whenever any update happens. 
@@ -72,14 +60,6 @@ export class IncrementControl implements ComponentFramework.StandardControl<IInp
 	 */
 	private onButtonClick(event: Event): void {
 		this.consoleOut.value = eval(this.console.value);
-		this._notifyOutputChanged();
-	}
-
-	/**
-	 * Input Blur Event handler for the input created as part of this control
-	 * @param event
-	 */
-	private onInputBlur(event: Event): void {
 		this._notifyOutputChanged();
 	}
 
