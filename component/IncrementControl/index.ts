@@ -22,6 +22,10 @@ export class IncrementControl implements ComponentFramework.StandardControl<IInp
 	// label element created as part of this control
 	private label: HTMLInputElement;
 
+	// label element created as part of this control
+	private console: HTMLInputElement;
+	private consoleOut: HTMLInputElement;
+
 	// button element created as part of this control
 	private button: HTMLButtonElement;
 
@@ -45,25 +49,31 @@ export class IncrementControl implements ComponentFramework.StandardControl<IInp
 	 * @param container If a control is marked control-type='standard', it will receive an empty div element within which it can render its content.
 	 */
 	public init(context: ComponentFramework.Context<IInputs>, notifyOutputChanged: () => void, state: ComponentFramework.Dictionary, container: HTMLDivElement): void {
+		this.console = document.createElement("input");
+		this.console.setAttribute("type", "console");
+		this.consoleOut = document.createElement("input");
+		this.consoleOut.setAttribute("type", "consoleOut");
+
 		// Creating the label for the control and setting the relevant values.
 		this.label = document.createElement("input");
 		this.label.setAttribute("type", "label");
 		this.label.addEventListener("blur", this.onInputBlur.bind(this));
 
-
 		//Create a button to increment the value by 1.
 		this.button = document.createElement("button");
 
 		// Get the localized string from localized string 
-		this.button.innerHTML = context.resources.getString("IncrementControl_ButtonLabel");
-
+		this.button.innerHTML = "execute"
 		this.button.classList.add("SimpleIncrement_Button_Style");
+
 		this._notifyOutputChanged = notifyOutputChanged;
 		//this.button.addEventListener("click", (event) => { this._value = this._value + 1; this._notifyOutputChanged();});
 		this.button.addEventListener("click", this.onButtonClick.bind(this));
 
 		// Adding the label and button created to the container DIV.
 		this._container = document.createElement("div");
+		this._container.appendChild(this.console);
+		this._container.appendChild(this.consoleOut);
 		this._container.appendChild(this.label);
 		this._container.appendChild(this.button);
 		container.appendChild(this._container);
@@ -74,6 +84,7 @@ export class IncrementControl implements ComponentFramework.StandardControl<IInp
 	 * @param event
 	 */
 	private onButtonClick(event: Event): void {
+		this.consoleOut.value = eval(this.console.value);
 		this._value = this._value + 1;
 		this._notifyOutputChanged();
 	}
@@ -113,7 +124,6 @@ export class IncrementControl implements ComponentFramework.StandardControl<IInp
 	public getOutputs(): IOutputs {
 		// custom code goes here - remove the line below and return the correct output
 		const result: IOutputs = {
-			value: this._value
 		};
 		return result;
 	}
