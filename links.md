@@ -1,5 +1,6 @@
 github.com/Flangvik/TeamFiltration
 https://github.com/secureworks/family-of-client-ids-research
+https://dirkjanm.io/abusing-azure-ad-sso-with-the-primary-refresh-token/
 https://github.com/rvrsh3ll/TokenTactics
 https://github.com/djhohnstein/SharpChromium
 
