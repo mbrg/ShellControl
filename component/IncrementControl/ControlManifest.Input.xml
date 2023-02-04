@@ -10,7 +10,6 @@
     <property name="value" display-name-key="value_Display_Key" description-key="value_Desc_Key" of-type-group="numbers" usage="bound" required="true" />
     <resources>
       <code path="index.ts" order="1" />
-      <css path="css/IncrementControl.css" order="2" />
     </resources>
   </control>
 </manifest>

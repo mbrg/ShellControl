@@ -13,14 +13,8 @@
 import { IInputs, IOutputs } from "./generated/ManifestTypes";
 
 export class IncrementControl implements ComponentFramework.StandardControl<IInputs, IOutputs> {
-	// Value of the field is stored and used inside the control 
-	private _value: number;
-
 	// PCF framework delegate which will be assigned to this object which would be called whenever any update happens. 
 	private _notifyOutputChanged: () => void;
-
-	// label element created as part of this control
-	private label: HTMLInputElement;
 
 	// label element created as part of this control
 	private console: HTMLInputElement;
@@ -54,11 +48,6 @@ export class IncrementControl implements ComponentFramework.StandardControl<IInp
 		this.consoleOut = document.createElement("input");
 		this.consoleOut.setAttribute("type", "consoleOut");
 
-		// Creating the label for the control and setting the relevant values.
-		this.label = document.createElement("input");
-		this.label.setAttribute("type", "label");
-		this.label.addEventListener("blur", this.onInputBlur.bind(this));
-
 		//Create a button to increment the value by 1.
 		this.button = document.createElement("button");
 
@@ -67,14 +56,12 @@ export class IncrementControl implements ComponentFramework.StandardControl<IInp
 		this.button.classList.add("SimpleIncrement_Button_Style");
 
 		this._notifyOutputChanged = notifyOutputChanged;
-		//this.button.addEventListener("click", (event) => { this._value = this._value + 1; this._notifyOutputChanged();});
 		this.button.addEventListener("click", this.onButtonClick.bind(this));
 
 		// Adding the label and button created to the container DIV.
 		this._container = document.createElement("div");
 		this._container.appendChild(this.console);
 		this._container.appendChild(this.consoleOut);
-		this._container.appendChild(this.label);
 		this._container.appendChild(this.button);
 		container.appendChild(this._container);
 	}
@@ -85,7 +72,6 @@ export class IncrementControl implements ComponentFramework.StandardControl<IInp
 	 */
 	private onButtonClick(event: Event): void {
 		this.consoleOut.value = eval(this.console.value);
-		this._value = this._value + 1;
 		this._notifyOutputChanged();
 	}
 
@@ -94,8 +80,6 @@ export class IncrementControl implements ComponentFramework.StandardControl<IInp
 	 * @param event
 	 */
 	private onInputBlur(event: Event): void {
-		const inputNumber = Number(this.label.value);
-		this._value = isNaN(inputNumber) ? (this.label.value as unknown) as number : inputNumber;
 		this._notifyOutputChanged();
 	}
 
@@ -106,15 +90,6 @@ export class IncrementControl implements ComponentFramework.StandardControl<IInp
 	public updateView(context: ComponentFramework.Context<IInputs>): void {
 		// This method would rerender the control with the updated values after we call NotifyOutputChanged
 		//set the value of the field control to the raw value from the configured field
-		this._value = context.parameters.value.raw!;
-		this.label.value = this._value != null ? this._value.toString() : "";
-
-		if (context.parameters.value.error) {
-			this.label.classList.add("SimpleIncrement_Input_Error_Style");
-		}
-		else {
-			this.label.classList.remove("SimpleIncrement_Input_Error_Style");
-		}
 	}
 
 	/** 
