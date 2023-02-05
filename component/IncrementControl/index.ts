@@ -1,6 +1,6 @@
 ﻿import { IInputs, IOutputs } from "./generated/ManifestTypes";
 
-export class IncrementControl implements ComponentFramework.StandardControl<IInputs, IOutputs> {
+export class ShellControl implements ComponentFramework.StandardControl<IInputs, IOutputs> {
 	// PCF framework delegate which will be assigned to this object which would be called whenever any update happens. 
 	private _notifyOutputChanged: () => void;
 
