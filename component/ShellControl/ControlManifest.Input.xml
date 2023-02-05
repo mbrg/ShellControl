@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <manifest>
-  <control namespace="SampleNamespace" constructor="ShellControl" version="1.1.0" display-name-key="ShellControl_Display_Key" description-key="ShellControl_Desc_Key" control-type="standard">
+  <control namespace="mbrg" constructor="ShellControl" version="1.1.0" display-name-key="ShellControl_Display_Key" description-key="ShellControl_Desc_Key" control-type="standard">
     <type-group name="numbers">
       <type>Whole.None</type>
       <type>Currency</type>
