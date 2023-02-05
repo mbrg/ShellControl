@@ -6,4 +6,4 @@ Execute commands by typing them in the first input field and click "execute", th
 
 ![](assets/component.png)
 
-(*) Build to learn about PowerApps client-side runtime.
+(*) Built to learn about PowerApps client-side runtime.
