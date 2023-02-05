@@ -10,9 +10,11 @@ Execute commands by typing them in the first input field and click "execute", th
 
 ## How to use?
 
-- Add to [model-driven app](https://learn.microsoft.com/en-us/power-apps/developer/component-framework/add-custom-controls-to-a-field-or-entity)
-- Add to [canvas app](https://learn.microsoft.com/en-us/power-apps/developer/component-framework/component-framework-for-canvas-apps#add-components-to-a-canvas-app)
-- Add to [portal app](https://learn.microsoft.com/en-us/powerapps/maker/portals/component-framework-tutorial)
+1. Import [the solution zip](component/bin/solutions.zip) as Power Platform solution.
+2. Use one of the following guides:
+   1. Add to [model-driven app](https://learn.microsoft.com/en-us/power-apps/developer/component-framework/add-custom-controls-to-a-field-or-entity)
+   2. Add to [canvas app](https://learn.microsoft.com/en-us/power-apps/developer/component-framework/component-framework-for-canvas-apps#add-components-to-a-canvas-app)
+   3. Add to [portal app](https://learn.microsoft.com/en-us/powerapps/maker/portals/component-framework-tutorial)
 
 ## How to recreate?
 
