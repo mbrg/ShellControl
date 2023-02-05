@@ -7,3 +7,9 @@ Execute commands by typing them in the first input field and click "execute", th
 ![](assets/component.png)
 
 (*) Built to learn about PowerApps client-side runtime.
+
+## How to use?
+
+## How to recreate?
+
+See [How To Recreate](./build)
