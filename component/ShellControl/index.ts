@@ -44,6 +44,7 @@ export class ShellControl implements ComponentFramework.StandardControl<IInputs,
 
 		this._notifyOutputChanged = notifyOutputChanged;
 		this.button.addEventListener("click", this.onButtonClick.bind(this));
+		this.button.classList.add("Button_Style");
 
 		// Adding the label and button created to the container DIV.
 		this._container = document.createElement("div");
