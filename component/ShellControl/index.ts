@@ -41,7 +41,6 @@ export class ShellControl implements ComponentFramework.StandardControl<IInputs,
 
 		// Get the localized string from localized string 
 		this.button.innerHTML = "execute"
-		this.button.classList.add("SimpleIncrement_Button_Style");
 
 		this._notifyOutputChanged = notifyOutputChanged;
 		this.button.addEventListener("click", this.onButtonClick.bind(this));

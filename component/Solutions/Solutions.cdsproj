@@ -44,7 +44,7 @@
   </ItemGroup>
   
   <ItemGroup>
-    <ProjectReference Include="..\IncrementControl.pcfproj" />
+    <ProjectReference Include="..\ShellControl.pcfproj" />
   </ItemGroup>
 
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
