@@ -34,11 +34,7 @@ pac solution add-reference --path ..\
 cd build
 docker build -f Dockerfile -t msbuild .
 docker create --name msbuild-1 msbuild
-docker cp guid-generator-assets-1:C:\\build\\GuidGenerator\\bin .\\GuidGenerator\bin
+docker cp msbuild-1:C:\\build\\Solutions\\bin .\\Solutions\bin
 ```
 
-
-Generate template
-pac pcf init --namespace <specify your namespace here> --name ShellControl --template field --run-npm-install
-pac solution init --publisher-name mbrg --publisher-prefix dev
-pac solution add-reference --path c:\downloads\mysamplecomponent
+Borrows heavily from [alexellis.io](https://blog.alexellis.io/3-steps-to-msbuild-with-docker/).
