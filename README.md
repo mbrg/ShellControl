@@ -10,6 +10,10 @@ Execute commands by typing them in the first input field and click "execute", th
 
 ## How to use?
 
+- Add to [model-driven app](https://learn.microsoft.com/en-us/power-apps/developer/component-framework/add-custom-controls-to-a-field-or-entity)
+- Add to [canvas app](https://learn.microsoft.com/en-us/power-apps/developer/component-framework/component-framework-for-canvas-apps#add-components-to-a-canvas-app)
+- Add to [portal app](https://learn.microsoft.com/en-us/powerapps/maker/portals/component-framework-tutorial)
+
 ## How to recreate?
 
 Prerequisites:
@@ -18,6 +22,25 @@ Prerequisites:
 - [Power Platform CLI](https://learn.microsoft.com/en-us/power-platform/developer/cli/introduction#update-power-platform-cli-for-windows). 
 - npm
 - [MSBuild](https://learn.microsoft.com/en-us/visualstudio/msbuild/msbuild?view=vs-2022)
+
+### Run locally
+
+Commands:
+
+```bash
+# scope to component dir
+cd component
+# install dependencies
+npm install
+# build local harness
+npm run build
+# run local harness
+npm start
+```
+
+For more information, see [Microsoft Docs](https://learn.microsoft.com/en-us/power-apps/developer/component-framework/implementing-controls-using-typescript#build-your-code-components).
+
+### Build and Package
 
 Commands:
 
