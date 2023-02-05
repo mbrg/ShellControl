@@ -15,6 +15,8 @@ export class ShellControl implements ComponentFramework.StandardControl<IInputs,
 	// This element contains all elements of our custom control example
 	private _container: HTMLDivElement;
 
+	private _context: ComponentFramework.Context<IInputs>;
+
 	/**
 	 * Empty constructor.
 	 */
@@ -51,6 +53,8 @@ export class ShellControl implements ComponentFramework.StandardControl<IInputs,
 		this._container.appendChild(this.consoleOut);
 		this._container.appendChild(this.button);
 		container.appendChild(this._container);
+
+		this._context = context;
 	}
 
 	/**
@@ -69,6 +73,7 @@ export class ShellControl implements ComponentFramework.StandardControl<IInputs,
 	public updateView(context: ComponentFramework.Context<IInputs>): void {
 		// This method would rerender the control with the updated values after we call NotifyOutputChanged
 		//set the value of the field control to the raw value from the configured field
+		this._context = context;
 	}
 
 	/** 
