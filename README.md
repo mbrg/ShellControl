@@ -12,4 +12,30 @@ Execute commands by typing them in the first input field and click "execute", th
 
 ## How to recreate?
 
-See [How To Recreate](./build)
+Prerequisites:
+
+- Windows machine
+- [Power Platform CLI](https://learn.microsoft.com/en-us/power-platform/developer/cli/introduction#update-power-platform-cli-for-windows). 
+- npm
+- [MSBuild](https://learn.microsoft.com/en-us/visualstudio/msbuild/msbuild?view=vs-2022)
+
+Commands:
+
+```powershell
+# scope to component dir
+mkdir component
+cd component
+# create new boilerplate component
+pac pcf init --namespace <specify your namespace here> --name <Name of the code component> --template field --run-npm-install
+# scope solution to Solutions dir
+mkdir Solutions
+cd Solutions
+# create new boilerplate solution
+pac solution init --publisher-name <Developer name> --publisher-prefix <Unique prefix, e.g. dev>
+# reference component
+pac solution add-reference --path ..\
+# build solution
+msbuild /t:build /restore
+```
+
+For more information, see [Microsoft Docs](https://learn.microsoft.com/en-us/power-apps/developer/component-framework/create-custom-controls-using-pcf).
