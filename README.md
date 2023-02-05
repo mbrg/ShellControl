@@ -19,7 +19,7 @@ Execute commands by typing them in the first input field and click "execute", th
 Prerequisites:
 
 - Windows machine
-- [Power Platform CLI](https://learn.microsoft.com/en-us/power-platform/developer/cli/introduction#update-power-platform-cli-for-windows). 
+- [Power Platform CLI](https://learn.microsoft.com/en-us/power-platform/developer/cli/introduction#update-power-platform-cli-for-windows)
 - npm
 - [MSBuild](https://learn.microsoft.com/en-us/visualstudio/msbuild/msbuild?view=vs-2022)
 
